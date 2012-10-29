@@ -1,0 +1,32 @@
+diff -aurN file-roller-3.6.1.1.orig/src/commands/Makefile.am file-roller-3.6.1.1/src/commands/Makefile.am
+--- file-roller-3.6.1.1.orig/src/commands/Makefile.am	2012-10-24 20:39:33.632566920 +0200
++++ file-roller-3.6.1.1/src/commands/Makefile.am	2012-10-24 20:40:06.537729280 +0200
+@@ -1,4 +1,4 @@
+-privexecdir = $(libexecdir)/$(PACKAGE)
++privexecdir = $(libexecdir)/
+ privexec_PROGRAMS = rpm2cpio
+ 
+ INCLUDES = $(DISABLE_DEPRECATED) $(FR_CFLAGS)
+diff -aurN file-roller-3.6.1.1.orig/src/Makefile.am file-roller-3.6.1.1/src/Makefile.am
+--- file-roller-3.6.1.1.orig/src/Makefile.am	2012-10-24 20:39:33.633566956 +0200
++++ file-roller-3.6.1.1/src/Makefile.am	2012-10-24 20:40:48.138195510 +0200
+@@ -18,8 +18,8 @@
+ else
+ privdatadir = $(datadir)/file-roller/
+ uidir = $(datadir)/file-roller/ui
+-privexecdir = $(libexecdir)/file-roller/
+-shdir = $(libexecdir)/file-roller/
++privexecdir = $(libexecdir)/
++shdir = $(libexecdir)/
+ applications_dir = $(datadir)/applications
+ endif
+ 
+diff -aurN file-roller-3.6.1.1.orig/src/sh/Makefile.am file-roller-3.6.1.1/src/sh/Makefile.am
+--- file-roller-3.6.1.1.orig/src/sh/Makefile.am	2012-10-24 20:39:33.633566956 +0200
++++ file-roller-3.6.1.1/src/sh/Makefile.am	2012-10-24 20:40:59.866608724 +0200
+@@ -1,4 +1,4 @@
+-shdir = $(libexecdir)/$(PACKAGE)
++shdir = $(libexecdir)/
+ sh_DATA = isoinfo.sh 
+ 
+ EXTRA_DIST = $(sh_DATA)
