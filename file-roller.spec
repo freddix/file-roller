@@ -1,11 +1,11 @@
 Summary:	An archive manager for GNOME
 Name:		file-roller
-Version:	3.6.1.1
+Version:	3.6.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	b85c1cb8a336287c244d5d4fac9defbe
+# Source0-md5:	381c6efe41b7de424f675397bf057f9c
 Patch0:		%{name}-libexecdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -15,8 +15,8 @@ BuildRequires:	gnome-doc-utils
 BuildRequires:	libtool
 BuildRequires:	nautilus-devel
 BuildRequires:	pkg-config
+Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
-Requires(post,postun):	gtk+-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	rarian
 Suggests:	bzip2
@@ -98,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/*.sh
 %attr(755,root,root) %{_libexecdir}/rpm2cpio
 %{_datadir}/file-roller
-%{_datadir}/GConf/gsettings/file-roller.convert
 %{_datadir}/dbus-1/services/org.gnome.FileRoller.service
 %{_datadir}/glib-2.0/schemas/org.gnome.FileRoller.gschema.xml
 %{_desktopdir}/*.desktop
