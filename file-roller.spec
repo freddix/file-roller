@@ -1,11 +1,11 @@
 Summary:	An archive manager for GNOME
 Name:		file-roller
-Version:	3.6.3
+Version:	3.8.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	6fdc21dfe47847125191a8ad8633871e
+Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	ea6836364741c6ee7e39ecd50a24feaa
 Patch0:		%{name}-libexecdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -18,7 +18,6 @@ BuildRequires:	pkg-config
 Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	hicolor-icon-theme
-Requires(post,postun):	rarian
 Suggests:	bzip2
 Suggests:	gzip
 Suggests:	p7zip
@@ -73,19 +72,17 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.la
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,en@shaw,ks,ur_PK}
 
-%find_lang %{name} --with-gnome --with-omf
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%scrollkeeper_update_post
 %update_desktop_database_post
 %update_icon_cache hicolor
 %update_gsettings_cache
 
 %postun
-%scrollkeeper_update_postun
 %update_desktop_database_postun
 %update_icon_cache hicolor
 %update_gsettings_cache
