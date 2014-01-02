@@ -1,11 +1,11 @@
 Summary:	An archive manager for GNOME
 Name:		file-roller
-Version:	3.10.1
+Version:	3.10.2.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	95806a0504c4053ee6ef95bfb20f1a05
+# Source0-md5:	f0af445adb92b13f20619e486f6941a0
 Patch0:		%{name}-libexecdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
