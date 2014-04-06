@@ -1,19 +1,18 @@
 Summary:	An archive manager for GNOME
 Name:		file-roller
-Version:	3.10.2.1
+Version:	3.12.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	f0af445adb92b13f20619e486f6941a0
+Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.12/%{name}-%{version}.tar.xz
+# Source0-md5:	4c247806f3d4662b44923c19cc9b9754
 Patch0:		%{name}-libexecdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-doc-utils
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel >= 3.10.0
+BuildRequires:	nautilus-devel >= 3.12.0
 BuildRequires:	pkg-config
 Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
@@ -51,7 +50,6 @@ File Roller extension for Nautilus.
 %patch -p1
 
 %build
-%{__gnome_doc_prepare}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
@@ -69,8 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.la
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,en@shaw,ks,ur_PK}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.la
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/GConf
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,en@shaw}
 
 %find_lang %{name} --with-gnome
 
