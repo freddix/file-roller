@@ -93,8 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/file-roller
 %attr(755,root,root) %{_libexecdir}/*.sh
 %attr(755,root,root) %{_libexecdir}/rpm2cpio
-%{_datadir}/file-roller
+%{_datadir}/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
 %{_datadir}/dbus-1/services/org.gnome.FileRoller.service
+%{_datadir}/file-roller
 %{_datadir}/glib-2.0/schemas/org.gnome.FileRoller.gschema.xml
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/apps/file-roller.*
