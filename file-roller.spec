@@ -1,18 +1,18 @@
 Summary:	An archive manager for GNOME
 Name:		file-roller
-Version:	3.12.1
+Version:	3.14.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	434952be3565b74c13b22ac171283933
+Source0:	http://ftp.gnome.org/pub/gnome/sources/file-roller/3.14/%{name}-%{version}.tar.xz
+# Source0-md5:	4899bd0714fe558f6c5f5fc6acd819cd
 Patch0:		%{name}-libexecdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel >= 3.12.0
+BuildRequires:	nautilus-devel >= 3.14.0
 BuildRequires:	pkg-config
 Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
